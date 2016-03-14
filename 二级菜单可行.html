@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="jquery-1.12.1.js"></script>
+	<script src="bootstrap.min.js"></script>
+    <style>
+    li{
+    	list-style: none;
+    }
+.first_menu{
+	text-align: center;
+	height: 40px;
+	background: #fca;
+	font-size: 18px;
+	border:1px solid #ccc;
+}
+.first_menu a{
+	width: 100%;
+	display: inline-block;
+}
+.side_menu{
+   width: 200px;
+}
+.side_menu ul{
+	padding:0px;
+	margin:0px;
+}
+.second_menu li{
+	text-align: center;
+	list-style: none;
+	height:40px;
+	border:1px solid #ccc;
+	
+}
+.second_menu li a{
+	width: 100%;
+	display: inline-block;
+}
+.second_menu li.active{
+	background: #ccc;
+}
+.sidemenu_cont{
+	width: 800px;
+}
+
+.nav-tabs>li {
+	float: none;
+
+}
+    </style>
+</head>
+<body>
+
+<div class="tabbable">
+	
+
+<ul class="nav nav-tabs ">
+	<li class="active">
+        <a href="#">首页 </a>
+    </li>
+     <li>
+        <a href="#system" class="nav-header collapsed" data-toggle="collapse">系统管理</a>
+        <ul id="system" class="nav nav-list collapse " >
+            <li><a href="#tab1" data-toggle="tab">用户管理</a></li>
+            <li><a href="#tab2" data-toggle="tab">菜单管理</a></li> 
+        </ul>
+    </li>
+    <li>
+        <a href="#">首页2</a>
+    </li>
+    <li>
+        <a href="#system2" class="nav-header collapsed" data-toggle="collapse">系统管理2</a>
+        <ul id="system2" class="nav nav-list collapse " >
+            <li><a href="#tab3" data-toggle="tab">用户管理</a></li>
+            <li><a href="#tab4" data-toggle="tab">用户管理</a></li>
+        </ul>
+    </li>
+</ul>
+</div>
+ <div class="tab-content  sidemenu_cont">
+	    <div class="tab-pane" id="tab1">
+	      <p>I'm in Section 1.</p>
+	    </div>
+	    <div class="tab-pane" id="tab2">
+	      <p>Howdy, I'm in Section 2.</p>
+	    </div>
+	     <div class="tab-pane" id="tab3">
+	      <p>I'm in Section 3.</p>
+	    </div>
+	    <div class="tab-pane" id="tab4">
+	      <p>Howdy, I'm in Section 4.</p>
+	    </div>
+	  </div>
+</body>
+
+<script>
+	$('a[data-toggle="tab"]').on('shown', function (e) {
+	  //e.target // 当前活动的标签
+	 // e.relatedTarget // 上一个选择的标签
+	 console.log(e.relatedTarget);
+	 e.relatedTarget.removeClass('active');
+	})
+</script>
+</html>
